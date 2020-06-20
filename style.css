@@ -23,8 +23,10 @@ canvas {
 
 .home-text h1{
     font-size: 20vh;
-    font-weight: 600;
-    color: white;
+    font-weight: 700;
+    color: black;
+    text-shadow: 5px 0 0 #4eccc1, -5px 0 0 #4eccc1, 0 5px 0 #4eccc1, 0 -5px 0 #4eccc1, 5px 5px #4eccc1, -5px -5px 0 #4eccc1, 5px -5px 0 #4ecca3, -5px 5px 0 #4eccc1;
+
 }
 
 .home-text h4 {
@@ -35,4 +37,8 @@ canvas {
 
 .explosion{
     display: none;
+}
+
+#unhide {
+    --animate-duration: 5s;
 }
