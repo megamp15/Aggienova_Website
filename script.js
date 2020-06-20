@@ -54,6 +54,8 @@ for (let i = 0; i < 15000; i++) {
         Math.random() * 600 - 300,
         Math.random() * 600 - 300
     );
+    star.velocity = 0;
+    star.acceleration = 0.0005;
     starGeo.vertices.push(star);
 }
 sprite = new THREE.TextureLoader().load('img/star.png');
@@ -72,11 +74,18 @@ function animate() {
     scene.traverse(function (node) {
         if (node instanceof THREE.Points && node.name != "supernova") {
             node.position.x += 0.03;
-            if (node.position.x > 25) {
-                node.position.x = -25;
-            }
         }
     })
+    // starGeo.vertices.forEach(p => {
+    //     p.velocity += p.acceleration
+    //     p.x -= p.velocity;
+
+    //     if (p.x < -200) {
+    //         p.x = 200;
+    //         p.velocity = 0;
+    //     }
+    // });
+    // starGeo.verticesNeedUpdate = true;
 
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
