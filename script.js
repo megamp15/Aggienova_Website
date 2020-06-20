@@ -34,8 +34,8 @@ window.addEventListener('resize', () => {
 supernovaGeo = new THREE.Geometry();
 supernovaGeo.vertices.push(new THREE.Vector3(0, 0, 0));
 sprite = new THREE.TextureLoader()
-sprite.crossOrigin='*';
-let sprite2 = sprite.load('supernova.png')
+sprite.crossOrigin = '*';
+let sprite2 = sprite.load('img/supernova.png')
 supernovaMat = new THREE.PointsMaterial({
     color: '#FFFFFF',
     size: 0.1,
@@ -54,11 +54,9 @@ for (let i = 0; i < 15000; i++) {
         Math.random() * 600 - 300,
         Math.random() * 600 - 300
     );
-    star.velocity = 0;
-    star.acceleration = 0.005;
     starGeo.vertices.push(star);
 }
-sprite = new THREE.TextureLoader().load('star.png');
+sprite = new THREE.TextureLoader().load('img/star.png');
 let starMaterial = new THREE.PointsMaterial({
     color: '#FFFFFF',
     size: 0.7,
@@ -73,7 +71,7 @@ function animate() {
     // moving each star point in +x direction
     scene.traverse(function (node) {
         if (node instanceof THREE.Points && node.name != "supernova") {
-            node.position.x += 0.01;
+            node.position.x += 0.03;
             if (node.position.x > 25) {
                 node.position.x = -25;
             }
@@ -85,12 +83,13 @@ function animate() {
 }
 animate();
 
-this.tl = new TimelineMax({ onComplete: myFunc });
-this.tl.to(supernovaMat, 1, { size: 1.5, ease: Expo.easeOut });
+this.tl = new TimelineMax({ onStart: myFunc });
+this.tl.to(supernovaMat, 15, { size: 1.5, ease: Expo.easeOut, delay: .75 });
 
 
 function myFunc() {
-    console.log("1");
-    console.log(document.getElementById('unhide').classList);
     document.getElementById('unhide').classList.remove('explosion');
+    document.getElementById('unhide').classList.add('animate__animated');
+    document.getElementById('unhide').classList.add('animate__zoomIn');
+    document.getElementById('unhide').classList.add('animate__slower');
 }
