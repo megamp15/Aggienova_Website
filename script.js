@@ -75,6 +75,9 @@ function animate() {
         if (node instanceof THREE.Points && node.name != "supernova") {
             node.position.x += 0.03;
         }
+        if (node.position.x > 50){
+            node.position.x = -25;
+        }
     })
     // starGeo.vertices.forEach(p => {
     //     p.velocity += p.acceleration
@@ -93,7 +96,7 @@ function animate() {
 animate();
 
 this.tl = new TimelineMax({ onStart: myFunc });
-this.tl.to(supernovaMat, 15, { size: 1.5, ease: Expo.easeOut, delay: .75 });
+this.tl.to(supernovaMat, 17, { size: 1.5, ease: Expo.easeOut, delay: .75 });
 
 
 function myFunc() {
@@ -101,4 +104,8 @@ function myFunc() {
     document.getElementById('unhide').classList.add('animate__animated');
     document.getElementById('unhide').classList.add('animate__zoomIn');
     document.getElementById('unhide').classList.add('animate__slower');
+    document.getElementById('unhide2').classList.remove('explosion');
+    document.getElementById('unhide2').classList.add('animate__animated');
+    document.getElementById('unhide2').classList.add('animate__zoomIn');
+    document.getElementById('unhide2').classList.add('animate__slower');
 }

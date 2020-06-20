@@ -22,14 +22,50 @@
     <!-- HOME PAGE -->
     <section id="home" class="home">
         <div id="unhide" class="home-text text-center explosion">
-            <h1>AGGIENOVA</h1>
-            <!-- <h4>supernova-research</h4> -->
+            <h1><span style="color:maroon">AGGIE</span>NOVA</h1>
+            <a href="#about" class="btn">ABOUT</a>
+            <a href="#projects" class="btn">PROJECTS</a>
+            <a href="#contact" class="btn">CONTACT</a>
         </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="about">
+    <!-- Navigation -->
+    <nav class="navbar navbar-dark navbar-expand-md sticky-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item "><a href="#home" class="nav-link">HOME</a></li>
+                    <li class="nav-item "><a href="#about" class="nav-link">ABOUT</a></li>
+                    <li class="nav-item "><a href="#team" class="nav-link">TEAMS</a></li>
+                    <li class="nav-item "><a href="#project" class="nav-link">PROJECTS</a></li>
+                    <li class="nav-item "><a href="#contact" class="nav-link">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <!-- ABOUT -->
+    <section id="about" class="about container-fluid">
+        <div class="about-text">
+            <h1 class="about-header text-center ">About</h1>
+            <div class="row">
+                <div class="about-border col-md-3">
+                    <iframe src="https://giphy.com/embed/ghIeczlW5Ba8JzXtgO" width="350" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/nasa-animation-supernova-giantstar-ghIeczlW5Ba8JzXtgO">via GIPHY</a></p>
+                </div>
+                <div class="col-md-6 about-body">
+                    <p>The AGGIENOVA research team studies exploding stars (supernovae) using data obtained by ground
+                        and space-based observatories, including NASA’s Swift and Hubble space telescopes.</p>
+                    <p>This team will use and build analysis and visualization tools for the Swift Optical Ultraviolet
+                        Supernova Archive (SOUSA) with python <i class="fab fa-python fa-2x"></i> as the primary language.</p>
+                </div>
+                <div class="about-border col-md-3">
+                    <img src="img/Swift_Observatory_spacecraft_model.png" alt="SWIFT IMG" class="img-fluid">
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- CONTACT -->
@@ -41,6 +77,11 @@
 
     </section>
 
+    <!-- Smooth Scroll by cferdinandi - https://github.com/cferdinandi/smooth-scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
     <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r99/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
