@@ -104,8 +104,10 @@ function myFunc() {
     document.getElementById('unhide').classList.add('animate__animated');
     document.getElementById('unhide').classList.add('animate__zoomIn');
     document.getElementById('unhide').classList.add('animate__slower');
-    document.getElementById('unhide2').classList.remove('explosion');
-    document.getElementById('unhide2').classList.add('animate__animated');
-    document.getElementById('unhide2').classList.add('animate__zoomIn');
-    document.getElementById('unhide2').classList.add('animate__slower');
+
+    setTimeout(function (){
+        document.getElementById('unhide').classList.remove('animate__animated');
+        document.getElementById('unhide').classList.remove('animate__zoomIn');
+        document.getElementById('unhide').classList.remove('animate__slower');  
+    },20000);
 }
