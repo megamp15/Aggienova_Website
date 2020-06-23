@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scrollbar-color: maroon black;
+    scrollbar-color: #631515 black;
 }
 
 /* HOME PAGE */
@@ -28,12 +28,12 @@ canvas {
     font-family: 'Varela Round', sans-serif;
     font-size: 20vh;
     font-weight: 900;
-    color: maroon;
+    color: #631515;
 }
 
 
 .home-text a:hover{
-    border: 4px solid maroon;
+    border: 4px solid #631515;
     color: white;
     box-shadow: inset 0 0 5000px rgba(0,0,0,.3);
 }
@@ -61,7 +61,7 @@ canvas {
 
 /* Nav */
 .navbar{
-    background-color: maroon;
+    background-color: #631515;
 }
 
 .nav-link{
@@ -71,44 +71,142 @@ canvas {
 /* ABOUT */
 .about{
     min-height: 100vh;
-    display: grid;
-    place-items: center;
     background-color: black;
 }
 
-.about-text {
-    /* text-align: center; */
-}
 
 .about-header{
-    padding-top: 30px;
+    padding-top: 50px;
     font-family: 'Varela Round', sans-serif;
     font-size: 200px;
-    color: rgba(255, 255, 255, 0.836);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .about-body {
-    border: 5px solid maroon;
+    border: 5px solid white;
     border-radius: 2rem;
     padding: 0.75rem;
     font-size: 1.5rem;
     color: white;
     margin-left: 100px;
-    margin-right: 100px;
+    margin-right: 50px;
+    display: flex;
+    flex-wrap: column wrap;
+    justify-content: space-around;
+    box-shadow: inset 0 0 1000px 200px rgba(99,21,21,.9);
+    ;
+
 }
+
+.about-body-info{
+    margin: auto 0;
+}
+
 
 .about-border {
     margin: auto 0;
 }
 
+/* CONTACT */
+.contact{
+    background-color: black;
+    /* background-color: rgba(7, 7, 7, 0.527); */
+    min-height: 100vh;
+}
+
+.contact-header{
+    padding-top: 50px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 200px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-info{
+    border: 5px solid white;
+    border-radius: 2rem;
+    display: flex;
+    flex-wrap: column wrap;
+    justify-content: space-around;
+    box-shadow: inset 0 0 1000px 200px rgba(99,21,21,.9);
+    margin: 3vw 0 auto;
+    padding: 3vw 0;
+}
+
+.contact-info-text{
+    margin: auto 0;
+    color: white;
+    padding-left: 1vw;
+}
+
+.contact-info-text a{
+    text-decoration:none;
+    color: white;
+}
+
+.website-link a:hover{
+    cursor: pointer;
+    color: black;
+}
+
+
+.contact-form{
+    background-color: black;
+    color: #dfdfdf;
+    border-radius: 10px;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 20px;
+    width: 80%;
+}
+
+input, textarea{
+    border: 3px solid white;
+}
+
+
+.contact-submit {
+    background-color: #631515;
+    border: 3px solid white;
+    color: white;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px 30px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+input[type=submit]:hover{
+    border: 3px solid #631515;
+    background-color: white;
+    color: #631515;
+    font-weight: 700;
+}
+
+
+input[type=text]:focus, textarea:focus {
+    border: 3px solid #631515;
+}
+
+#error-message {
+    margin: 10px auto;
+    padding: 0px;
+    color: #fe8b8e;
+    border-radius: 10px;
+    width: 77%;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: all 0.5s ease;
+}
+
+
 
 /* MEDIA QUERIES */
-
 @media(max-width: 1100px) {
 
     /* ABOUT */
 
-    .about-header {
+    .about-header, .contact-header{
         font-size: 10rem;
         padding-top: 30px;
     }
@@ -118,11 +216,15 @@ canvas {
         margin-left: 80px;
         margin-right: 80px;
     }
+    /* CONTACT */
+    #error-message {
+        width: 75%;
+    }
 }
 
 
 
-@media(max-width: 975px) {
+@media(max-width: 990px) {
 
     /* TITLE PAGE */
 
@@ -138,7 +240,7 @@ canvas {
 
     /* ABOUT */
 
-    .about-header {
+    .about-header, .contact-header {
         font-size: 10rem;
     }
 
@@ -148,7 +250,20 @@ canvas {
         margin-right: 50px;
     }
 
+    /* CONTACT */
+    .contact-info {
+        width: 50%;
+        margin: auto;   
+    }
 
+    .contact-form{
+        margin: 7px auto;
+        width: 87%;
+    }
+
+    #error-message {
+        width: 83%;
+    }
 }
 
 
@@ -167,7 +282,7 @@ canvas {
     }
     /* ABOUT */
 
-    .about-header {
+    .about-header{
         font-size: 9rem;
     }
 
@@ -177,7 +292,55 @@ canvas {
         margin-right: 40px;
     }
 
+    /* CONTACT */
+    .contact-header{
+        font-size: 8rem;
+    }
+
+    .contact-info {
+        width: 80%;
+    }
+
+    .contact-info-text h2 {
+        font-size: 1.4rem;
+    }
+
+    .contact-info-text h3{
+        font-size: 1.4rem;
+    }
+
+    #error-message {
+        width: 82%;
+    }
 }
+
+@media(max-width: 767px) {
+    .about-body {
+        font-size: 1.25rem;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    .contact-info {
+        width: 60%;
+        margin: auto;   
+    }
+
+    .contact-form{
+        margin: 7px auto;
+    }
+
+    .contact-submit {
+        margin: 10px 0;
+        padding: 10px 40px;
+        font-size: 15px;
+    }
+
+    #error-message {
+        width: 83%;
+    }
+}
+
 
 @media(max-width: 700px) {
 
@@ -190,7 +353,7 @@ canvas {
 
     /* ABOUT */
 
-    .about-header {
+    .about-header, .contact-header {
         font-size: 7.5rem;
     }
 
@@ -200,9 +363,22 @@ canvas {
         margin-right: 40px;
     }
 
+    /* CONTACT */
+    .contact-info-text h2 {
+        font-size: 1.25rem;
+    }
+
+    .contact-info-text h3{
+        font-size: 1.25rem;
+    }
+
+    .contact-form{
+        font-size: 1.2rem;
+        width: 90%;
+    }
 }
 
-@media(max-width: 520px) {
+@media(max-width: 576px) {
 
     /* TITLE PAGE */
 
@@ -218,14 +394,30 @@ canvas {
 
     /* ABOUT */
 
-    .about-header {
+    .about-header, .contact-header {
         font-size: 5.5rem;
     }
 
     .about-body {
         font-size: 1.0rem;
+        margin-left: 50px;
     }
 
+    /* CONTACT */
+    .contact-info {
+        margin: 20px auto;
+        width: 80%;
+    }
+
+    .contact-form{
+        font-size: 1.0rem;
+    }
+
+    .contact-submit {
+        margin: 10px 0;
+        padding: 10px 30px;
+        font-size: 13px;
+    }
 }
 
 @media(max-width: 420px) {
@@ -242,14 +434,27 @@ canvas {
         border-radius: .75rem;
     }
 
-        /* ABOUT */
+    /* ABOUT */
 
-        .about-header {
-            font-size: 4.5rem;
-        }
+    .about-header, .contact-header {
+        font-size: 4.5rem;
+    }
     
-        .about-body {
-            font-size: .90rem;
-            padding: .5rem;
-        }
+    .about-body {
+        font-size: .90rem;
+        padding: .5rem;
+    }    
+
+    /* CONTACT */
+    .contact-info {
+        padding: 1rem 1.5rem;
+    }
+
+    .contact-info-text h2 {
+        font-size: 1.2rem;
+    }
+    .contact-info-text h3{
+        font-size: 1.24rem;
+    }
+
 }

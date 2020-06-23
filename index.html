@@ -23,7 +23,7 @@
     <section id="home" class="home">
         <div id="unhide" class="home-text text-center explosion">
             <h1><span style="color:maroon">AGGIE</span>NOVA</h1>
-            <a href="#about" class="btn button">ABOUT</a>
+            <a href="#about" class="btn button" onclick="return validation()">ABOUT</a>
             <a href="#projects" class="btn button">PROJECTS</a>
             <a href="#contact" class="btn button">CONTACT</a>
         </div>
@@ -50,14 +50,19 @@
     <!-- ABOUT -->
     <section id="about" class="about container-fluid">
         <div class="about-text">
-            <h1 class="about-header text-center ">About</h1>
+            <h1 class="about-header text-center ">ABOUT</h1>
             <div class="row">
+                <div class="col-lg-1"></div>
                 <div class="col-md-5 about-body">
-                    <p>The AGGIENOVA research team studies exploding stars (supernovae) using data obtained by ground
-                        and space-based observatories, including NASA’s Swift and Hubble space telescopes.</p>
-                    <p>This team will use and build analysis and visualization tools for the Swift Optical Ultraviolet
-                        Supernova Archive (SOUSA) with python <i class="fab fa-python fa-2x"></i> as the primary
-                        language.</p>
+                    <div class="about-body-info">
+                        <p>The AGGIENOVA research team studies exploding stars (supernovae) using data obtained by
+                            ground
+                            and space-based observatories, including NASA’s Swift and Hubble space telescopes.</p>
+                        <p>This team will use and build analysis and visualization tools for the Swift Optical
+                            Ultraviolet
+                            Supernova Archive (SOUSA) with python <i class="fab fa-python fa-1x"></i> as the primary
+                            language.</p>
+                    </div>
                 </div>
                 <div class="about-border col-md-4">
                     <img src="img/Swift_Observatory_spacecraft_model.png" alt="SWIFT IMG" class="img-fluid about-img">
@@ -68,12 +73,49 @@
 
     <!-- CONTACT -->
 
-    <section class="contact">
-
+    <section id="contact" class="contact container-fluid">
+        <h1 class="contact-header text-center ">CONTACT</h1>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-sm-9  col-lg-5 contact-info">
+                <div class="contact-info-text">
+                    <h2>Project Leader: Dr. Peter Brown, Ph.D.</h2>
+                    <h3><i class="fa fa-envelope" aria-hidden="true"></i> pbrown@physics.tamu</h3>
+                    <div class="website-link">
+                        <h3><i class="fa fa-link" aria-hidden="true"></i> <a
+                                href="https://physics.tamu.edu/directory/peter-brown/" target="_blank">Website</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div id="contact-form" class="col-lg-6 contact-form">
+                <form method="post" action="https://forms.un-static.com/forms/9cc58a36b71ccc14b446b4f84a35c010dba78d98">
+                    <div id="error-message" class="col-12 text-center"></div>
+                    <div class="col-12 text-center">
+                        <input id="Name" name="Name" type="text" placeholder="Name" class="contact-form">
+                    </div>
+                    <div class="col-12 text-center">
+                        <input id="Email" name="_replyto" type="text" placeholder="Email" class="contact-form">
+                    </div>
+                    <div class="col-12 text-center">
+                        <textarea name="message" id="message" rows="5" placeholder="Message"
+                            class="contact-form"></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+                        <input type="submit" class="contact-submit" value="SUBMIT" onclick="return validation()">
+                    </div>
+                    <input type="hidden" name="_subject" value="Aggienova Website - New Contact Submission!">
+                </form>
+            </div>
+        </div>
     </section>
 
     <!-- AGGIENOVA PROJECTS -->
     <section class="projects">
+
+    </section>
+
+    <!-- AGGIENOVA TEAMS -->
+    <section class="Teams">
 
     </section>
 

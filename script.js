@@ -54,8 +54,9 @@ for (let i = 0; i < 15000; i++) {
         Math.random() * 600 - 300,
         Math.random() * 600 - 300
     );
-    star.velocity = 0;
-    star.acceleration = 0.0005;
+    // REDSTAPLER - USED FOR MOVEMENT
+    // star.velocity = 0;
+    // star.acceleration = 0.0005;
     starGeo.vertices.push(star);
 }
 sprite = new THREE.TextureLoader().load('img/star.png');
@@ -75,10 +76,11 @@ function animate() {
         if (node instanceof THREE.Points && node.name != "supernova") {
             node.position.x += 0.03;
         }
-        if (node.position.x > 50){
+        if (node.position.x > 50) {
             node.position.x = -25;
         }
     })
+    // REDSTAPLER MOVEMENT
     // starGeo.vertices.forEach(p => {
     //     p.velocity += p.acceleration
     //     p.x -= p.velocity;
@@ -105,9 +107,40 @@ function myFunc() {
     document.getElementById('unhide').classList.add('animate__zoomIn');
     document.getElementById('unhide').classList.add('animate__slower');
 
-    setTimeout(function (){
+    setTimeout(function () {
         document.getElementById('unhide').classList.remove('animate__animated');
         document.getElementById('unhide').classList.remove('animate__zoomIn');
-        document.getElementById('unhide').classList.remove('animate__slower');  
-    },20000);
+        document.getElementById('unhide').classList.remove('animate__slower');
+    }, 20000);
+}
+
+// FORM VALIDATION 
+function validation() {
+    let name = document.getElementById("Name").value;
+    let email = document.getElementById("Email").value;
+    let message = document.getElementById("message").value;
+    let error_message = document.getElementById("error-message");
+    let Message = ""
+
+    error_message.style.padding = "10px";
+    error_message.style.border = "3px solid #fe8b8e";
+
+    if (name == "" || name == " ") {
+        Message = "Please Enter a Valid Name"
+    }
+
+    if (email.indexOf("@") == -1) {
+        Message = "Please Enter a Valid Email"
+    }
+
+    if (message == "" || message == " ") {
+        Message = "Please Enter a Valid Message"
+    }
+
+    if (Message != "") {
+        error_message.innerHTML = Message
+        return false;
+    }
+
+    return true;
 }
