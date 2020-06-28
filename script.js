@@ -123,7 +123,7 @@ function validation() {
     let Message = ""
 
     error_message.style.padding = "10px";
-    error_message.style.border = "3px solid #fe8b8e";
+    error_message.style.border = "3px solid white";
 
     if (name == "" || name == " ") {
         Message = "Please Enter a Valid Name"
@@ -143,4 +143,30 @@ function validation() {
     }
 
     return true;
+}
+
+//Smooth Scroll by cferdinandi - https:github.com/cferdinandi/smooth-scroll
+var scroll = new SmoothScroll('a[href*="#"]');
+
+//Add active to navigation bar that is scrolled or clicked too 
+// idea and code from https://stackoverflow.com/questions/9979827/change-active-menu-item-on-page-scroll and https://stackoverflow.com/questions/25455009/uncaught-typeerror-cannot-read-property-top-of-undefined
+
+jQuery(document).ready(function ($) {
+    $(document).on("scroll", onScroll);
+});
+
+function onScroll(event) {
+    var scrollPos = $(document).scrollTop();
+    $('#navbarMenu a').each(function () {
+        var currLink = $(this);
+        var refElement = currLink.attr("href");
+        var splitEle = refElement.split('#');
+        console.log($("#" + splitEle[1]).length);
+        if ($("#" + splitEle[1]).offset().top -50 <= scrollPos && $("#" + splitEle[1]).offset().top + $("#" + splitEle[1]).height() > scrollPos) {
+            $('#navbarMenu ul').removeClass("active");
+            currLink.parent().addClass("active");
+        } else {
+            currLink.parent().removeClass("active");
+        }
+    });
 }
