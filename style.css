@@ -68,20 +68,27 @@ canvas {
     color: white;
 }
 
+/* HEADERS */
+.about-header{
+    margin-top: 75px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 200px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-header, .project-header, .members-header{
+    padding-top: 50px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 200px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
 /* ABOUT */
 .about{
     min-height: 100vh;
     background-color: black;
     display: grid;
     place-items: top;
-}
-
-
-.about-header{
-    margin-top: 75px;
-    font-family: 'Varela Round', sans-serif;
-    font-size: 200px;
-    color: rgba(255, 255, 255, 0.9);
 }
 
 .about-body {
@@ -96,14 +103,11 @@ canvas {
     flex-wrap: column wrap;
     justify-content: space-around;
     box-shadow: inset 0 0 1000px 200px rgba(99,21,21,.9);
-    ;
-
 }
 
 .about-body-info{
     margin: auto 0;
 }
-
 
 .about-border {
     margin: auto 0;
@@ -114,13 +118,6 @@ canvas {
     background-color: black;
     /* background-color: rgba(7, 7, 7, 0.527); */
     min-height: 100vh;
-}
-
-.contact-header{
-    padding-top: 50px;
-    font-family: 'Varela Round', sans-serif;
-    font-size: 200px;
-    color: rgba(255, 255, 255, 0.9);
 }
 
 .contact-info{
@@ -149,7 +146,6 @@ canvas {
     cursor: pointer;
     color: black;
 }
-
 
 .contact-form{
     background-color: black;
@@ -194,7 +190,6 @@ input[type=text]:focus, textarea:focus {
     padding: 0px;
     box-shadow: inset 0 0 1000px 200px rgba(99,21,21,.9);
     color: white;
-    background-color: ;
     border-radius: 10px;
     width: 77%;
     text-align: center;
@@ -202,7 +197,168 @@ input[type=text]:focus, textarea:focus {
     transition: all 0.5s ease;
 }
 
+/* PROJECTS */
+.projects{
+    min-height: 100vh;
+    background-color: black;
+}
 
+.project-btn button{
+    border-radius: 10px;
+    margin: 0px 10px 10px;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.project-btn button:hover{
+    border: 3px solid #631515;
+    background-color: white;
+    color: #631515;
+    font-weight: 700;
+}
+
+.card{
+    background-color: #631515;
+    border:5px solid white;
+    border-radius: 2rem;
+    color: white;
+    margin: 20px 0px;
+}
+
+.card a{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+    padding: .5rem .75rem;
+    text-align: center;
+}
+
+.card a:hover{
+    color: black;
+    background-color: white;
+}
+
+.proj-a{
+    display: grid;
+    place-items: center;
+}
+
+.gal-active{
+    border: 3px solid #631515;
+    background-color: white;
+    color: #631515;
+}
+
+.gal-inactive{
+    background-color: #631515;
+    border: 3px solid white;
+    color: white;
+}
+
+/* MEMBERS */
+.members{
+    min-height: 100vh;
+    background-color: black;
+}
+
+.indiv-card{
+    display: flex;
+    border: 3px solid white;
+    border-radius: 2rem;
+    justify-content: center;
+    margin: 2rem 5rem;
+    color: white;
+    background-color: #631515;
+}
+.indiv-pic{
+    flex: 1;
+    padding: 2rem 2rem;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+}
+
+.indiv-info{
+    flex: 3;
+    margin: auto 1.75rem auto 1rem;
+}
+
+.indiv-info ul li{
+    margin-left: 3rem;
+}
+
+.icons{
+    flex: .25;
+    margin: auto 0;
+    cursor: pointer;
+}
+
+.icons a{
+    color: white;
+}
+
+.fa-linkedin:hover, .fa-github-square:hover  {
+    border: 2px solid #631515;
+    cursor: pointer;
+}
+
+.owl-carousel span {
+    background: #631515 !important;
+}
+
+.owl-carousel .active span {
+    background: white !important;
+}
+
+/* THANK YOU */
+.thank-you-container{
+    font-family: 'Varela Round', sans-serif;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    overflow: hidden;
+}
+
+.thank-you-content{
+    text-align: center;
+    box-shadow: inset 1000px 1000px 1000px rgba(99,21,21,.7);
+    border: 3px solid white;
+    border-radius: 2rem;
+    padding: 5rem 5rem;
+    line-height: 6rem;
+    font-size: 3rem;
+}
+
+.thank-you-container p{
+    margin-top: 2rem;
+    color: white;
+    font-weight: 700;
+}
+
+.thank-you-container a button{
+    border: 3px solid #631515;
+    border-radius: 5rem;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #631515;
+}
+
+.thank-you-container a button:hover{
+    border: 3px solid white;
+    background-color: #631515;
+    color: white;
+}
 
 /* MEDIA QUERIES */
 @media(max-width: 1100px) {
@@ -222,12 +378,41 @@ input[type=text]:focus, textarea:focus {
         margin-right: 80px;
     }
     /* CONTACT */
+    .contact-header{
+        padding-top:60px;
+    }
     #error-message {
         width: 75%;
     }
+    /* PROJECTS */
+    .project-header, .members-header{
+        font-size: 9rem;
+    }
+
+    /* MEMBERS */
+    .indiv-info{
+        font-size: 1rem;
+    }
+
+    .icons{
+        margin: auto 2rem;
+    }
+
+    /* THANK YOU */
+    .thank-you-content{
+        padding: 4rem 4rem;
+        line-height: 5rem;
+        font-size: 2.75rem;
+    }
+
+    .thank-you-container p{
+        margin-top: 1rem;
+    }
+
+    .thank-you-container a button{
+        font-size: 1.25rem;
+    }
 }
-
-
 
 @media(max-width: 990px) {
 
@@ -246,7 +431,7 @@ input[type=text]:focus, textarea:focus {
     /* ABOUT */
 
     .about-header, .contact-header {
-        font-size: 10rem;
+        font-size: 9rem;
     }
 
     .about-body {
@@ -261,6 +446,9 @@ input[type=text]:focus, textarea:focus {
         margin: auto;   
     }
 
+    .contact-header{
+        padding-top:60px;
+    }
     .contact-form{
         margin: 7px auto;
         width: 87%;
@@ -268,6 +456,49 @@ input[type=text]:focus, textarea:focus {
 
     #error-message {
         width: 83%;
+    }
+
+    /* PROJECTS */
+    .project-header, .members-header{
+        font-size: 8rem;
+    }
+
+    .project-btn button{
+        margin: 0px 10px 10px;
+        padding: 10px 30px;
+        font-size: 15px;
+    }
+
+    .card{
+        margin: 20px 100px;
+    }
+
+    /* MEMBERS */
+    .indiv-card{
+        margin: 3rem 1rem;
+    }
+    .indiv-info{
+        font-size: .95rem;
+    }
+
+    .icons{
+        margin: auto 2rem;
+    }
+
+    .pic-text{
+        font-size: 1.5rem;
+    }
+
+    .indiv-pic{
+        flex: 1;
+        padding: 3rem 1.5rem;
+    }
+
+    /* THANK YOU */
+    .thank-you-content{
+        padding: 3rem 3rem;
+        line-height: 5rem;
+        font-size: 2.25rem;
     }
 }
 
@@ -300,6 +531,7 @@ input[type=text]:focus, textarea:focus {
     /* CONTACT */
     .contact-header{
         font-size: 8rem;
+        padding-top:60px;
     }
 
     .contact-info {
@@ -317,9 +549,38 @@ input[type=text]:focus, textarea:focus {
     #error-message {
         width: 82%;
     }
+
+    /* MEMBERS */
+    .indiv-card{
+        margin: 3rem 0rem;
+    }
+    .indiv-info{
+        font-size: 1rem;
+    }
+
+    .icons{
+        margin: auto .5rem;
+    }
+    .indiv-pic{
+        flex: 1;
+        padding: 3rem 1rem;
+    }
+
+    .pic-text{
+        font-size: 1rem;
+    }
+    /* THANK YOU */
+    .thank-you-content{
+        padding: 2rem 2rem;
+        line-height: 5rem;
+        font-size: 2.15rem;
+    }
+    .thank-you-container a button{
+        font-size: 1.15rem;
+    }
 }
 
-@media(max-width: 767px) {
+@media(max-width: 768px) {
     .about-body {
         font-size: 1.25rem;
         margin-left: 50px;
@@ -343,6 +604,40 @@ input[type=text]:focus, textarea:focus {
 
     #error-message {
         width: 83%;
+    }
+
+    /* PROJECTS */
+    .project-header{
+        font-size: 7rem;
+    }
+
+    .project-btn button{
+        margin: 0px 10px 10px;
+        padding: 10px 30px;
+        font-size: 15px;
+    }
+
+    .card{
+        margin: 20px 80px;
+    }
+
+    .members-header{
+        font-size: 7.5rem;
+    }
+
+    /* THANK YOU */
+    .thank-you-content{
+        padding: 3rem 2rem;
+        line-height: 4rem;
+        font-size: 2rem;
+    }
+    
+    .thank-you-container p{
+        margin-top: .5rem;
+    }
+
+    .thank-you-container a button{
+        font-size: 1.0rem;
     }
 }
 
@@ -381,6 +676,44 @@ input[type=text]:focus, textarea:focus {
         font-size: 1.2rem;
         width: 90%;
     }
+
+    /* PROJECTS */
+    .project-header, .members-header{
+        font-size: 6rem;
+    }
+
+    .card{
+        margin: 20px 70px;
+    }
+    /* MEMBERS */
+    .indiv-card{
+        margin: 3rem 0rem;
+    }
+    .indiv-info{
+        font-size: .75rem;
+    }
+    .indiv-info ul li{
+        margin-left: 2rem;
+    }
+
+    .icons{
+        margin: auto 1rem;
+    }
+
+    /* THANK YOU */
+    .thank-you-content{
+        padding: 2rem 1.75rem;
+        line-height: 4rem;
+        font-size: 1.5rem;
+    }
+    
+    .thank-you-container p{
+        margin-top: .5rem;
+    }
+
+    .thank-you-container a button{
+        font-size: 1.0rem;
+    } 
 }
 
 @media(max-width: 576px) {
@@ -423,6 +756,52 @@ input[type=text]:focus, textarea:focus {
         padding: 10px 30px;
         font-size: 13px;
     }
+
+    /* PROJECTS */
+    .project-header, .members-header{
+        font-size: 5rem;
+    }
+
+    .project-btn button{
+        margin: 0px 5px 10px;
+        padding: 10px 30px;
+        font-size: 15px;
+    }
+
+    .card{
+        margin: 20px 50px;
+    }
+
+    /* MEMBERS */
+    .indiv-card{
+        margin: 2rem 0rem;
+    }
+    .indiv-info{
+        display: none;
+    }
+
+    .icons{
+        margin: auto 2rem;
+    }
+
+    .indiv-pic{
+        flex: 1;
+        padding: 3rem 3rem;
+    }
+    /* THANK YOU */
+    .thank-you-content{
+        padding: 1.75rem 1.5rem;
+        line-height: 3.5rem;
+        font-size: 1.15rem;
+    }
+    
+    .thank-you-container p{
+        margin-top: 0px;
+    }
+
+    .thank-you-container a button{
+        font-size: .75rem;
+    } 
 }
 
 @media(max-width: 420px) {
@@ -462,4 +841,33 @@ input[type=text]:focus, textarea:focus {
         font-size: 1.24rem;
     }
 
+    /* PROJECTS */
+    .project-header, .members-header{
+        font-size: 4rem;
+    }
+    
+    .project-btn button{
+        margin: 0px 2px 10px;
+        padding: 10px 30px;
+        font-size: 12px;
+    }
+    
+    .card{
+        margin: 20px 0px;
+    }
+
+    /* THANK YOU */
+    .thank-you-content{
+        padding: 1.25rem 1rem;
+        line-height: 3rem;
+        font-size: .90rem;
+    }
+    
+    .thank-you-container p{
+        margin-top: 0px;
+    }
+
+    .thank-you-container a button{
+        font-size: .65rem;
+    } 
 }

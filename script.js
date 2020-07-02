@@ -125,16 +125,16 @@ function validation() {
     error_message.style.padding = "10px";
     error_message.style.border = "3px solid white";
 
-    if (name == "" || name == " ") {
-        Message = "Please Enter a Valid Name"
+    if (message == "" || message == " ") {
+        Message = "Please Enter a Valid Message"
     }
 
     if (email.indexOf("@") == -1) {
         Message = "Please Enter a Valid Email"
     }
 
-    if (message == "" || message == " ") {
-        Message = "Please Enter a Valid Message"
+    if (name == "" || name == " ") {
+        Message = "Please Enter a Valid Name"
     }
 
     if (Message != "") {
@@ -162,7 +162,7 @@ function onScroll(event) {
         var refElement = currLink.attr("href");
         var splitEle = refElement.split('#');
         console.log($("#" + splitEle[1]).length);
-        if ($("#" + splitEle[1]).offset().top -50 <= scrollPos && $("#" + splitEle[1]).offset().top + $("#" + splitEle[1]).height() > scrollPos) {
+        if ($("#" + splitEle[1]).offset().top - 75 <= scrollPos && $("#" + splitEle[1]).offset().top + $("#" + splitEle[1]).height() - 75 > scrollPos) {
             $('#navbarMenu ul').removeClass("active");
             currLink.parent().addClass("active");
         } else {
@@ -170,3 +170,63 @@ function onScroll(event) {
         }
     });
 }
+
+// Gallery select
+// Function that filters projects based on class names
+function filterSelection(n) {
+    let x = document.getElementsByClassName('proj');
+    let b = document.getElementsByClassName('btn');
+    let a = document.getElementsByClassName('proj-animate')
+
+    for (let i = 0; i < b.length; i++) {
+        if (b[i].classList.contains(n)) {
+            b[i].classList.add('gal-active')
+            b[i].classList.remove('gal-inactive')
+        }
+        else {
+            b[i].classList.remove('gal-active')
+            b[i].classList.add('gal-inactive')
+        }
+    }
+    if (n == 'all') n = 'proj';
+
+    for (let i = 0; i < x.length; i++) {
+        if (!x[i].classList.contains('d-none')) {
+            x[i].classList.add('d-none')
+        }
+    }
+
+
+    for (let i = 0; i < x.length; i++) {
+        if (!x[i].classList.contains(n)) {
+            x[i].classList.add('d-none')
+            x[i].classList.add('animate__animated')
+            x[i].classList.remove('animate__backInUp')
+            x[i].classList.add('animate__backOutDown')
+            x[i].classList.add('animate__slower')
+        }
+        else {
+            x[i].classList.remove('d-none')
+            x[i].classList.add('animate__animated')
+            x[i].classList.remove('animate__backOutDown')
+            x[i].classList.add('animate__backInUp')
+            x[i].classList.add('animate__slower')
+        }
+    }
+}
+
+// Carousel
+$(document).ready(function () {
+    $(".owl-carousel").owlCarousel(
+        {
+            loop: true,
+            margin: 10,
+            items: 1,
+            center: true,
+            autoplay: true,
+            autoplayTimeout: 10000,
+            autoplayHoverPause: true
+        }
+    );
+});
+
