@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGGIENOVA</title>
-    <!-- BOOTSTAP CSS AND JS FILES -->
+    <!-- BOOTSTAP CSS AND JQUERY JS FILES -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -14,6 +14,11 @@
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.css"
         integrity="sha256-6Wozb/CzRANFOaGqN+u/uRT7kcffVIQt9OhOuuA6I9o=" crossorigin="anonymous" />
+    <!-- Owl Carousel  CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        integrity="sha256-qvCL5q5O0hEpOm1CgOLQUuHzMusAZqDcAZL9ijqfOdI=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+        integrity="sha256-nXBV7Gr2lU0t+AwKsnS05DYtzZ81oYTXS6kj7LBQHfM=" crossorigin="anonymous" />
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -24,7 +29,7 @@
         <div id="unhide" class="home-text text-center explosion">
             <h1><span style="color:maroon">AGGIE</span>NOVA</h1>
             <a href="#about" class="btn button">ABOUT</a>
-            <a href="#projects" class="btn button">PROJECTS</a>
+            <a href="#project" class="btn button">PROJECTS</a>
             <a href="#contact" class="btn button">CONTACT</a>
         </div>
     </section>
@@ -39,8 +44,8 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item "><a href="#home" class="nav-link">HOME</a></li>
                     <li class="nav-item "><a href="#about" class="nav-link">ABOUT</a></li>
-                    <li class="nav-item "><a href="#team" class="nav-link">TEAMS</a></li>
                     <li class="nav-item "><a href="#project" class="nav-link">PROJECTS</a></li>
+                    <li class="nav-item "><a href="#members" class="nav-link">MEMBERS</a></li>
                     <li class="nav-item "><a href="#contact" class="nav-link">CONTACT</a></li>
                 </ul>
             </div>
@@ -71,8 +76,111 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- AGGIENOVA PROJECTS -->
+    <section id="project" class="projects container-fluid">
+        <h1 class="project-header text-center ">PROJECTS</h1>
+        <div class="row">
+            <div class="col-12 text-center project-btn">
+                <button type="button" class="btn btn-outline-secondary all gal-active"
+                    onclick="filterSelection('all')">Show All</button>
+                <button type="button" class="btn btn-outline-secondary scripts gal-inactive "
+                    onclick="filterSelection('scripts')">Scripts</button>
+                <button type="button" class="btn btn-outline-secondary outputs gal-inactive"
+                    onclick="filterSelection('outputs')">Outputs</button>
+            </div>
+        </div>
+        <div class="row" id="proj-animate">
+            <div class="col-lg-4 proj scripts ">
+                <div class="card">
+                    <!-- <img class="card-img-top" src="" alt="Card Image"> -->
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Script #1</h4>
+                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
+                            officiis natus harum aliquam saepe. Unde temporibus vel porro debitis explicabo!</p>
+                        <div class="proj-a">
+                            <a href="#">More Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 proj outputs">
+                <div class="card">
+                    <!-- <img class="card-img-top" src="" alt="Card Image"> -->
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Output #1</h4>
+                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
+                            officiis natus harum aliquam saepe. Unde temporibus vel porro debitis explicabo!</p>
+                        <div class="proj-a">
+                            <a href="#">More Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 proj scripts">
+                <div class="card">
+                    <!-- <img class="card-img-top" src="" alt="Card Image"> -->
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Script #2</h4>
+                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
+                            officiis natus harum aliquam saepe. Unde temporibus vel porro debitis explicabo!</p>
+                        <div class="proj-a">
+                            <a href="#">More Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- AGGIENOVA MEMBERS -->
+    <section id="members" class="members container-fluid">
+        <h1 class="members-header text-center ">MEMBERS</h1>
+
+        <div class="owl-carousel owl-theme owl-loaded">
+            <div class="item indiv-card">
+                <div class="indiv-pic">
+                    <img class="img-fluid" src="img/team_pics/DrBrown.png" alt="Dr.Brown Image">
+                    <h3 class="text-center pic-text">Dr.Brown</h3>
+                </div>
+                <div class="indiv-info text-center">
+                    <h5>Project Leader</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam in nobis eligendi cumque obcaecati
+                        quae
+                        culpa consectetur animi dolore officia.</p>
+                </div>
+                <div class="icons">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+                    <a href="https://github.com/pbrown801" target="_blank"><i class="fab fa-github-square fa-3x"></i></a>
+                </div>
+            </div>
+
+            <div class="item indiv-card">
+                <div class="indiv-pic">
+                    <img class="img-fluid" src="img/team_pics/Mahir.jpg" alt="Member img">
+                    <h3 class="text-center pic-text">Mahir P.</h3>
+                </div>
+                <div class="indiv-info">
+                    <h5 class="text-center">Spring 2019 - Present</h5>
+                    <ul>
+                        <p>Developed many scripts for Aggienova:</p>
+                        <li>Smoothing script to smooth image data using interpolation to visualize less pixelated images
+                            of galaxies and supernovae. </li>
+                        <li>Developed an animated plot of data over time (epochs) using the matplotlib library for
+                            statistical visualization.</li>
+                        <li>Automated the retrieval and data wrangling of supernovae data from the Swift Satellite.</li>
+                        <li>Created the Aggienova Website</li>
+                    </ul>
+                </div>
+                <div class="icons">
+                    <a href="https://www.linkedin.com/in/mahir-p/" target="_blank"><i
+                            class="fab fa-linkedin fa-3x"></i></a>
+                    <a href="https://github.com/megamp15" target="_blank"><i class="fab fa-github-square fa-3x"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact" class="contact container-fluid">
         <h1 class="contact-header text-center ">CONTACT</h1>
         <div class="row">
@@ -109,21 +217,16 @@
         </div>
     </section>
 
-    <!-- AGGIENOVA PROJECTS -->
-    <section id="project" class="projects">
-
-    </section>
-
-    <!-- AGGIENOVA TEAMS -->
-    <section id="team" class="Teams">
-
-    </section>
-
     <!-- Smooth Scroll by cferdinandi - https://github.com/cferdinandi/smooth-scroll -->
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-    <!-- JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r99/three.min.js"></script>
+    <!-- THREE.js and TweenMax JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r99/three.min.js"
+        integrity="sha256-V0EyXecXmQqSk1QW7iej2g+pzqX02oz78cnceES2ZCs=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <!-- OWL CAROUSEL JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+    <!-- JS file -->
     <script src="script.js"></script>
 </body>
 
