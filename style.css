@@ -587,6 +587,10 @@ img{
         margin-right: 50px;
     }
     
+    .about-border{
+        text-align: center;
+    }
+
     .contact-info {
         width: 60%;
         margin: auto;   
