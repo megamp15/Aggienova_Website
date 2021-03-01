@@ -161,8 +161,7 @@ function onScroll(event) {
         var currLink = $(this);
         var refElement = currLink.attr("href");
         var splitEle = refElement.split('#');
-        console.log($("#" + splitEle[1]).length);
-        if ($("#" + splitEle[1]).offset().top - 75 <= scrollPos && $("#" + splitEle[1]).offset().top + $("#" + splitEle[1]).height() - 75 > scrollPos) {
+        if ($("#" + splitEle[1]).offset().top -25 <= scrollPos && $("#" + splitEle[1]).offset().top + $("#" + splitEle[1]).height() - 75 > scrollPos) {
             $('#navbarMenu ul').removeClass("active");
             currLink.parent().addClass("active");
         } else {
