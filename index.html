@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGGIENOVA</title>
     <!-- BOOTSTAP CSS AND JQUERY JS FILES -->
@@ -14,7 +15,7 @@
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.css"
         integrity="sha256-6Wozb/CzRANFOaGqN+u/uRT7kcffVIQt9OhOuuA6I9o=" crossorigin="anonymous" />
-    <!-- Owl Carousel  CSS-->
+    <!-- Owl Carousel CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
         integrity="sha256-qvCL5q5O0hEpOm1CgOLQUuHzMusAZqDcAZL9ijqfOdI=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
@@ -23,207 +24,225 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <!-- HOME PAGE -->
-    <section id="home" class="home">
-        <div id="unhide" class="home-text text-center explosion">
-            <h1><span style="color:maroon">AGGIE</span>NOVA</h1>
-            <a href="#about" class="btn button">ABOUT</a>
-            <a href="#project" class="btn button">PROJECTS</a>
-            <a href="#contact" class="btn button">CONTACT</a>
-        </div>
-    </section>
+<body id="main">
+    <canvas id="canvas"></canvas>
+    <div class="main">
+        <!-- NAV -->
+        <nav class="navbar navbar-dark navbar-expand-md sticky-top">
+            <div class="container-fluid">
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item "><a href="#canvas" class="nav-link">HOME</a></li>
+                        <li class="nav-item "><a href="#about" class="nav-link">ABOUT</a></li>
+                        <!-- <li class="nav-item "><a href="#project" class="nav-link">PROJECTS</a></li> -->
+                        <li class="nav-item "><a href="#members" class="nav-link">MEMBERS</a></li>
+                        <li class="nav-item "><a href="#contact" class="nav-link">CONTACT</a></li>
+                        <li class="nav-item "><a href="https://alexcrabt.github.io/" target="_blank"
+                                class="nav-link">DATABASE</a></li>
+                        <li class="nav-item "><a href="templates.html" target="_blank" class="nav-link">TEMPLATES</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-dark navbar-expand-md sticky-top">
-        <div class="container-fluid">
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarMenu">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item "><a href="#home" class="nav-link">HOME</a></li>
-                    <li class="nav-item "><a href="#about" class="nav-link">ABOUT</a></li>
-                    <li class="nav-item "><a href="#project" class="nav-link">PROJECTS</a></li>
-                    <li class="nav-item "><a href="#members" class="nav-link">MEMBERS</a></li>
-                    <li class="nav-item "><a href="#contact" class="nav-link">CONTACT</a></li>
-                </ul>
+        <!-- HOME -->
+        <section id="home" class="home">
+            <div id="unhide" class="home-text text-center explosion">
+                <h1><span style="color:maroon">AGGIE</span>NOVA</h1>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="about container-fluid">
+            <div class="about-text">
+                <h1 class="about-header text-center ">ABOUT</h1>
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-md-5 about-body">
+                        <div class="about-body-info">
+                            <p>The AGGIENOVA research team studies exploding stars (supernovae) using data obtained by
+                                ground
+                                and space-based observatories, including NASA’s Swift and Hubble space telescopes.</p>
+                            <p>This team will use and build analysis and visualization tools for the Swift Optical
+                                Ultraviolet
+                                Supernova Archive (SOUSA) with python <i class="fab fa-python fa-1x"></i> as the primary
+                                language.</p>
+                        </div>
+                    </div>
+                    <div class="about-border col-md-4">
+                        <img src="img/Swift_Observatory_spacecraft_model.png" alt="SWIFT IMG"
+                            class="img-fluid about-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AGGIENOVA PROJECTS -->
+        <!-- <section id="project" class="projects container-fluid">
+    <h1 class="project-header text-center ">PROJECTS</h1>
+    <div class="row">
+        <div class="col-12 text-center project-btn">
+            <button type="button" class="btn btn-outline-secondary all gal-active"
+                onclick="filterSelection('all')">Show All</button>
+            <button type="button" class="btn btn-outline-secondary scripts gal-inactive "
+                onclick="filterSelection('scripts')">Scripts</button>
+            <button type="button" class="btn btn-outline-secondary outputs gal-inactive"
+                onclick="filterSelection('outputs')">Outputs</button>
+        </div>
+    </div>
+    <div class="row" id="proj-animate">
+        <div class="col-lg-4 proj scripts ">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Script #1</h4>
+                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
+                        officiis natus harum aliquam saepe. Unde temporibus vel porro debitis explicabo!</p>
+                    <div class="proj-a">
+                        <a href="#">More Info</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+        <div class="col-lg-4 proj outputs">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Output #1</h4>
+                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
+                        officiis natus harum aliquam saepe. Unde temporibus vel porro debitis explicabo!</p>
+                    <div class="proj-a">
+                        <a href="#">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 proj scripts">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Script #2</h4>
+                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
+                        officiis natus harum aliquam saepe. Unde temporibus vel porro debitis explicabo!</p>
+                    <div class="proj-a">
+                        <a href="#">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
 
-    <!-- ABOUT -->
-    <section id="about" class="about container-fluid">
-        <div class="about-text">
-            <h1 class="about-header text-center ">ABOUT</h1>
+        <!-- AGGIENOVA MEMBERS -->
+        <section id="members" class="members container-fluid">
+            <h1 class="members-header text-center ">MEMBERS</h1>
+
+            <div class="owl-carousel owl-theme owl-loaded">
+                <div class="item indiv-card">
+                    <div class="indiv-pic">
+                        <img class="img-fluid member-img" src="img/team_pics/DrBrown.png" alt="Dr.Brown Image">
+                        <h3 class="text-center pic-text">Dr. Brown</h3>
+                    </div>
+                    <div class="indiv-info">
+                        <h5 class="text-center date-color">Project Leader</h5>
+                        <ul>
+                            <li>I am a Research Scientist at the Mitchell Institute for Fundamental Physics and
+                                Astronomy at
+                                Texas A&M University.</li>
+                            <li>I lead a NASA-funded project to create the Swift Optical Ultraviolet Supernovae Archive
+                                - a
+                                UV database of the 600+ Supernovae observed by Swift.</li>
+                            <li>I enjoy teaching and mentoring students, and I lead the Aggienova research team through
+                                Texas A&M's Aggie Research Program to give more undergraduates a chance to make a real
+                                contribution to this exciting research.</li>
+                        </ul>
+                    </div>
+                    <div class="icons">
+                        <a href="https://www.linkedin.com/in/peter-brown-supernova/" target="_blank"><i
+                                class="fab fa-linkedin fa-3x"></i></a>
+                        <a href="https://github.com/pbrown801" target="_blank"><i
+                                class="fab fa-github-square fa-3x"></i></a>
+                    </div>
+                </div>
+
+                <div class="item indiv-card">
+                    <div class="indiv-pic">
+                        <img class="img-fluid member-img" src="img/team_pics/Mahir.jpg" alt="Member img">
+                        <h3 class="text-center pic-text">Mahir P.</h3>
+                    </div>
+                    <div class="indiv-info">
+                        <h5 class="text-center date-color">Spring 2019 - Present</h5>
+                        <ul>
+                            <p>Developed many scripts for Aggienova:</p>
+                            <li>Smoothing script to smooth image data using interpolation to visualize less pixelated
+                                images of galaxies and supernovae. </li>
+                            <li>Developed an animated summary plot of data over time (epochs) using the matplotlib
+                                library for
+                                statistical visualization.</li>
+                            <li>Automated the retrieval and data wrangling of supernovae data from the Swift Satellite.
+                            </li>
+                            <li>Added additional features to the Aggienova Templates pipeline.
+                            </li>
+                            <li>Created the Aggienova Website.</li>
+                        </ul>
+                    </div>
+                    <div class="icons">
+                        <a href="https://www.linkedin.com/in/mahir-p/" target="_blank"><i
+                                class="fab fa-linkedin fa-3x"></i></a>
+                        <a href="https://github.com/megamp15" target="_blank"><i
+                                class="fab fa-github-square fa-3x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="contact container-fluid">
+            <h1 class="contact-header text-center ">CONTACT</h1>
             <div class="row">
                 <div class="col-lg-1"></div>
-                <div class="col-md-5 about-body">
-                    <div class="about-body-info">
-                        <p>The AGGIENOVA research team studies exploding stars (supernovae) using data obtained by
-                            ground
-                            and space-based observatories, including NASA’s Swift and Hubble space telescopes.</p>
-                        <p>This team will use and build analysis and visualization tools for the Swift Optical
-                            Ultraviolet
-                            Supernova Archive (SOUSA) with python <i class="fab fa-python fa-1x"></i> as the primary
-                            language.</p>
-                    </div>
-                </div>
-                <div class="about-border col-md-4">
-                    <img src="img/Swift_Observatory_spacecraft_model.png" alt="SWIFT IMG" class="img-fluid about-img">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AGGIENOVA PROJECTS -->
-    <section id="project" class="projects container-fluid">
-        <h1 class="project-header text-center ">PROJECTS</h1>
-        <div class="row">
-            <div class="col-12 text-center project-btn">
-                <button type="button" class="btn btn-outline-secondary all gal-active"
-                    onclick="filterSelection('all')">Show All</button>
-                <button type="button" class="btn btn-outline-secondary scripts gal-inactive "
-                    onclick="filterSelection('scripts')">Scripts</button>
-                <button type="button" class="btn btn-outline-secondary outputs gal-inactive"
-                    onclick="filterSelection('outputs')">Outputs</button>
-            </div>
-        </div>
-        <div class="row" id="proj-animate">
-            <div class="col-lg-4 proj scripts ">
-                <div class="card">
-                    <!-- <img class="card-img-top" src="" alt="Card Image"> -->
-                    <div class="card-body">
-                        <h4 class="card-title text-center">Script #1</h4>
-                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
-                            officiis natus harum aliquam saepe. Unde temporibus vel porro debitis explicabo!</p>
-                        <div class="proj-a">
-                            <a href="#">More Info</a>
+                <div class="col-sm-9  col-lg-5 contact-info">
+                    <div class="contact-info-text">
+                        <h2>Project Leader: Dr. Peter Brown, Ph.D.</h2>
+                        <h3><i class="fa fa-envelope" aria-hidden="true"></i> pbrown@physics.tamu</h3>
+                        <div class="website-link">
+                            <h3><i class="fa fa-link" aria-hidden="true"></i> <a
+                                    href="https://physics.tamu.edu/directory/peter-brown/" target="_blank">Website</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 proj outputs">
-                <div class="card">
-                    <!-- <img class="card-img-top" src="" alt="Card Image"> -->
-                    <div class="card-body">
-                        <h4 class="card-title text-center">Output #1</h4>
-                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
-                            officiis natus harum aliquam saepe. Unde temporibus vel porro debitis explicabo!</p>
-                        <div class="proj-a">
-                            <a href="#">More Info</a>
+                <div id="contact-form" class="col-lg-6 contact-form">
+                    <form method="post"
+                        action="https://forms.un-static.com/forms/9cc58a36b71ccc14b446b4f84a35c010dba78d98">
+                        <div id="error-message" class="col-12 text-center"></div>
+                        <div class="col-12 text-center">
+                            <input id="Name" name="Name" type="text" placeholder="Name" class="contact-form">
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 proj scripts">
-                <div class="card">
-                    <!-- <img class="card-img-top" src="" alt="Card Image"> -->
-                    <div class="card-body">
-                        <h4 class="card-title text-center">Script #2</h4>
-                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
-                            officiis natus harum aliquam saepe. Unde temporibus vel porro debitis explicabo!</p>
-                        <div class="proj-a">
-                            <a href="#">More Info</a>
+                        <div class="col-12 text-center">
+                            <input id="Email" name="_replyto" type="text" placeholder="Email" class="contact-form">
                         </div>
-                    </div>
+                        <div class="col-12 text-center">
+                            <textarea name="message" id="message" rows="5" placeholder="Message"
+                                class="contact-form"></textarea>
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="submit" class="contact-submit" value="SUBMIT" onclick="return validation()">
+                        </div>
+                        <input type="hidden" name="_subject" value="Aggienova Website - New Contact Submission!">
+                    </form>
                 </div>
             </div>
+        </section>
+
+
+
+        <div class="container-fluid footer">
+            <p>AGGIENOVA &copy;
+                <script>document.write(new Date().getFullYear())</script>
+            </p>
         </div>
-    </section>
-
-    <!-- AGGIENOVA MEMBERS -->
-    <section id="members" class="members container-fluid">
-        <h1 class="members-header text-center ">MEMBERS</h1>
-
-        <div class="owl-carousel owl-theme owl-loaded">
-            <div class="item indiv-card">
-                <div class="indiv-pic">
-                    <img class="img-fluid" src="img/team_pics/DrBrown.png" alt="Dr.Brown Image">
-                    <h3 class="text-center pic-text">Dr.Brown</h3>
-                </div>
-                <div class="indiv-info">
-                    <h5 class="text-center">Project Leader</h5>
-                    <ul>
-                        <li>I am a Research Scientist at the Mitchell Institute for Fundamental Physics and Astronomy at
-                            Texas A&M University.</li>
-                        <li>I lead a NASA-funded project to create the Swift Optical Ultraviolet Supernovae Archive -- a
-                            UV database of the 600+ Supernovae observed by Swift.</li>
-                        <li>I enjoy teaching and mentoring students, and I lead the Aggienova research team through
-                            Texas A&M's Aggie Research Program to give more undergraduates a chance to make a real
-                            contribution to this exciting research.</li>
-                    </ul>
-                </div>
-                <div class="icons">
-                    <a href="https://www.linkedin.com/in/peter-brown-supernova/" target="_blank"><i
-                            class="fab fa-linkedin fa-3x"></i></a>
-                    <a href="https://github.com/pbrown801" target="_blank"><i
-                            class="fab fa-github-square fa-3x"></i></a>
-                </div>
-            </div>
-
-            <div class="item indiv-card">
-                <div class="indiv-pic">
-                    <img class="img-fluid" src="img/team_pics/Mahir.jpg" alt="Member img">
-                    <h3 class="text-center pic-text">Mahir P.</h3>
-                </div>
-                <div class="indiv-info">
-                    <h5 class="text-center">Spring 2019 - Present</h5>
-                    <ul>
-                        <p>Developed many scripts for Aggienova:</p>
-                        <li>Smoothing script to smooth image data using interpolation to visualize less pixelated images
-                            of galaxies and supernovae. </li>
-                        <li>Developed an animated plot of data over time (epochs) using the matplotlib library for
-                            statistical visualization.</li>
-                        <li>Automated the retrieval and data wrangling of supernovae data from the Swift Satellite.</li>
-                        <li>Created the Aggienova Website</li>
-                    </ul>
-                </div>
-                <div class="icons">
-                    <a href="https://www.linkedin.com/in/mahir-p/" target="_blank"><i
-                            class="fab fa-linkedin fa-3x"></i></a>
-                    <a href="https://github.com/megamp15" target="_blank"><i class="fab fa-github-square fa-3x"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact container-fluid">
-        <h1 class="contact-header text-center ">CONTACT</h1>
-        <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-sm-9  col-lg-5 contact-info">
-                <div class="contact-info-text">
-                    <h2>Project Leader: Dr. Peter Brown, Ph.D.</h2>
-                    <h3><i class="fa fa-envelope" aria-hidden="true"></i> pbrown@physics.tamu</h3>
-                    <div class="website-link">
-                        <h3><i class="fa fa-link" aria-hidden="true"></i> <a
-                                href="https://physics.tamu.edu/directory/peter-brown/" target="_blank">Website</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div id="contact-form" class="col-lg-6 contact-form">
-                <form method="post" action="https://forms.un-static.com/forms/9cc58a36b71ccc14b446b4f84a35c010dba78d98">
-                    <div id="error-message" class="col-12 text-center"></div>
-                    <div class="col-12 text-center">
-                        <input id="Name" name="Name" type="text" placeholder="Name" class="contact-form">
-                    </div>
-                    <div class="col-12 text-center">
-                        <input id="Email" name="_replyto" type="text" placeholder="Email" class="contact-form">
-                    </div>
-                    <div class="col-12 text-center">
-                        <textarea name="message" id="message" rows="5" placeholder="Message"
-                            class="contact-form"></textarea>
-                    </div>
-                    <div class="col-12 text-center">
-                        <input type="submit" class="contact-submit" value="SUBMIT" onclick="return validation()">
-                    </div>
-                    <input type="hidden" name="_subject" value="Aggienova Website - New Contact Submission!">
-                </form>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Smooth Scroll by cferdinandi - https://github.com/cferdinandi/smooth-scroll -->
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
