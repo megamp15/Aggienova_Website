@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&family=Varela+Round&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap');
 /* Universal Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scrollbar-width: thin;
     scrollbar-color: #631515 black;
+    
 }
 
 html {
@@ -29,15 +28,6 @@ html {
     border-radius: 6px;
     border: 3px solid var(--scrollbarBG);
 }
-/* NAV */
-
-.nav-link{
-    color: rgba(255, 255, 255, 0.9) !important;
-}
-
-.active .nav-link{
-    color: rgb(112, 25, 25) !important;
-}
 
 /* HOME PAGE */
 canvas {
@@ -45,61 +35,85 @@ canvas {
     top: 0; left: 0;
     z-index: -1;
     background-color: black;
-    min-height: 106vh;
-    width: 100%;
 }
 
 
 .home{
     display: grid;
     place-items: center;
-    min-height: 98vh;
+    min-height: 100vh;
     width: 100%;
 }
 
 .home-text h1{
-    font-family: 'Exo', sans-serif;
+    font-family: 'Varela Round', sans-serif;
     font-size: 20vh;
     font-weight: 900;
     color: #631515;
-    margin-bottom: 50px;
 }
+
+
+.home-text a:hover{
+    border: 4px solid #631515;
+    color: white;
+    box-shadow: inset 0 0 5000px rgba(0,0,0,.3);
+}
+
+.home-text a{
+    margin-top: 25px;
+    border: 4px solid #4eccc1;
+    border-radius: 1rem;
+    box-shadow: inset 0 0 5000px rgba(0,0,0,.3);
+    font-family: 'Varela Round', sans-serif;
+    font-size: 30px;
+    font-weight: 550;
+    color: #dfdfdf;
+    text-decoration: none;
+}
+
 
 .explosion{
     display: none;
 }
 
 #unhide {
-    --animate-duration: 3s;
+    --animate-duration: 5s;
+}
+
+/* Nav */
+.navbar{
+    background-color: #631515;
+}
+
+.nav-link{
+    color: white;
 }
 
 /* HEADERS */
 .about-header{
     margin-top: 75px;
-    font-family: 'Exo', sans-serif;
-    font-size: 150px;
-    font-weight: 1000;
-    color: rgba(99, 21, 21, 0.9);
+    font-family: 'Varela Round', sans-serif;
+    font-size: 200px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .contact-header, .project-header, .members-header{
-    padding-top: 75px;
-    font-family: 'Exo', sans-serif;
-    font-size: 150px;
-    font-weight: 1000;
-    color: rgba(99, 21, 21, 0.9);
+    padding-top: 50px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 200px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* ABOUT */
 .about{
-    min-height: 85vh;
+    min-height: 100vh;
     background-color: black;
     display: grid;
     place-items: top;
 }
 
 .about-body {
-    border: 5px solid rgba(99, 21, 21, 0.9);
+    border: 5px solid white;
     border-radius: 2rem;
     padding: 0.75rem;
     font-size: 1.5rem;
@@ -109,7 +123,7 @@ canvas {
     display: flex;
     flex-wrap: column wrap;
     justify-content: space-around;
-    box-shadow: inset 0 0 1000px 200px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0 0 1000px 200px rgba(99,21,21,.9);
 }
 
 .about-body-info{
@@ -118,6 +132,90 @@ canvas {
 
 .about-border {
     margin: auto 0;
+}
+
+/* CONTACT */
+.contact{
+    background-color: black;
+    /* background-color: rgba(7, 7, 7, 0.527); */
+    min-height: 100vh;
+}
+
+.contact-info{
+    border: 5px solid white;
+    border-radius: 2rem;
+    display: flex;
+    flex-wrap: column wrap;
+    justify-content: space-around;
+    box-shadow: inset 0 0 1000px 200px rgba(99,21,21,.9);
+    margin: 3vw 0 auto;
+    padding: 3vw 0;
+}
+
+.contact-info-text{
+    margin: auto 0;
+    color: white;
+    padding-left: 1vw;
+}
+
+.contact-info-text a{
+    text-decoration:none;
+    color: white;
+}
+
+.website-link a:hover{
+    cursor: pointer;
+    color: black;
+}
+
+.contact-form{
+    background-color: black;
+    color: #dfdfdf;
+    border-radius: 10px;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 20px;
+    width: 80%;
+}
+
+input, textarea{
+    border: 3px solid white;
+}
+
+
+.contact-submit {
+    background-color: #631515;
+    border: 3px solid white;
+    color: white;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px 30px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+input[type=submit]:hover{
+    border: 3px solid #631515;
+    background-color: white;
+    color: #631515;
+    font-weight: 700;
+}
+
+
+input[type=text]:focus, textarea:focus {
+    border: 3px solid #631515;
+}
+
+#error-message {
+    margin: 10px auto;
+    padding: 0px;
+    box-shadow: inset 0 0 1000px 200px rgba(99,21,21,.9);
+    color: white;
+    border-radius: 10px;
+    width: 77%;
+    text-align: center;
+    font-size: 20px;
+    transition: all 0.5s ease;
 }
 
 /* PROJECTS */
@@ -132,19 +230,18 @@ canvas {
     padding: 10px 30px;
     font-size: 18px;
     font-weight: 700;
-    background-color: black;
 }
 
 .project-btn button:hover{
     border: 3px solid #631515;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: white;
     color: #631515;
     font-weight: 700;
 }
 
 .card{
-    background-color: rgba(0, 0, 0, 0.9);
-    border:5px solid rgba(99, 21, 21, 0.9);
+    background-color: #631515;
+    border:5px solid white;
     border-radius: 2rem;
     color: white;
     margin: 20px 0px;
@@ -183,18 +280,18 @@ canvas {
 
 /* MEMBERS */
 .members{
-    min-height: 85vh;
+    min-height: 100vh;
     background-color: black;
 }
 
 .indiv-card{
     display: flex;
-    border: 5px solid rgba(99, 21, 21, 0.9);
+    border: 3px solid white;
     border-radius: 2rem;
     justify-content: center;
     margin: 2rem 5rem;
     color: white;
-    background-color: black;
+    background-color: #631515;
 }
 .indiv-pic{
     flex: 1;
@@ -204,13 +301,6 @@ canvas {
 img{
     width: 300px;
     height: 300px;
-}
-
-.date-color{
-    font-weight: bold;
-    color: rgba(99, 21, 21, 0.9);
-    font-size: 35px;
-    padding-bottom: 15px;
 }
 
 .indiv-info{
@@ -233,9 +323,8 @@ img{
 }
 
 .fa-linkedin:hover, .fa-github-square:hover  {
-    /* border: 2px solid #631515; */
+    border: 2px solid #631515;
     cursor: pointer;
-    color: #631515;
 }
 
 .owl-carousel span {
@@ -246,106 +335,50 @@ img{
     background: white !important;
 }
 
-/* CONTACT */
-.contact{
-    background-color: black;
-    /* background-color: rgba(7, 7, 7, 0.527); */
-    min-height: 95vh;
-}
-
-.contact-info{
-    border: 5px solid rgba(99, 21, 21, 0.9);
-    border-radius: 2rem;
+/* THANK YOU */
+.thank-you-container{
+    font-family: 'Varela Round', sans-serif;
+    height: 100vh;
+    width: 100%;
     display: flex;
-    flex-wrap: column wrap;
-    justify-content: space-around;
-    box-shadow: inset 0 0 1000px 200px rgba(0, 0, 0, 0.9);
-    margin: 3vw 0 auto;
-    padding: 3vw 0;
-}
-
-.contact-info-text{
-    margin: auto 0;
-    color: white;
-    padding-left: 1vw;
-}
-
-.contact-info-text a{
-    text-decoration:none;
-    color: white;
-}
-
-.website-link a:hover{
-    cursor: pointer;
-    color: rgba(99, 21, 21, 0.9);
-}
-
-.contact-form{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: black;
-    color: #dfdfdf;
-    border-radius: 10px;
-    margin: 5px 0;
-    padding: 10px;
-    font-size: 20px;
-    width: 80%;
-}
-
-input, textarea{
-    border: 3px solid white;
-}
-
-
-.contact-submit {
-    background-color: black;
-    border: 3px solid rgba(99, 21, 21, 0.9);
     color: white;
-    border-radius: 10px;
-    margin: 10px 0;
-    padding: 10px 30px;
-    font-size: 20px;
-    font-weight: 500;
+    overflow: hidden;
 }
 
-input, textarea{
-    outline: none;
-}
-
-input[type=submit]:hover{
+.thank-you-content{
+    text-align: center;
+    box-shadow: inset 1000px 1000px 1000px rgba(99,21,21,.7);
     border: 3px solid white;
-    background-color: rgba(99, 21, 21, 0.9);
-    color: white;
-    font-weight: 500;
+    border-radius: 2rem;
+    padding: 5rem 5rem;
+    line-height: 6rem;
+    font-size: 3rem;
 }
 
+.thank-you-container p{
+    margin-top: 2rem;
+    color: white;
+    font-weight: 700;
+}
 
-input[type=text]:focus, textarea:focus {
+.thank-you-container a button{
     border: 3px solid #631515;
+    border-radius: 5rem;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #631515;
 }
 
-#error-message {
-    margin: 10px auto;
-    padding: 0px;
-    box-shadow: inset 0 0 1000px 200px rgba(99,21,21,.9);
+.thank-you-container a button:hover{
+    border: 3px solid white;
+    background-color: #631515;
     color: white;
-    border-radius: 10px;
-    width: 77%;
-    text-align: center;
-    font-size: 20px;
-    transition: all 0.5s ease;
-}
-
-
-/* Footer */
-.footer {
-    background-color: black;
-    border-top: 3px solid rgba(99,21,21,.9);
-}
-
-.footer p {
-    padding: 15px 0 15px;
-    margin: auto 0;
-    text-align: center;
-    color: #dfdfdf;
 }
 
 /* MEDIA QUERIES */
@@ -569,12 +602,6 @@ input[type=text]:focus, textarea:focus {
 }
 
 @media(max-width: 768px) {
-    .home-text{
-        position: absolute;
-    }
-    .navbar ul{
-        position: absolute;
-    }
     .about-body {
         font-size: 1.25rem;
         margin-left: 50px;
