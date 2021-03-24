@@ -40,6 +40,10 @@ html {
     color: rgb(112, 25, 25) !important;
 }
 
+.nav-back{
+    background-color: #000000;
+}
+
 /* HOME PAGE */
 canvas {
     position: absolute;
@@ -93,7 +97,7 @@ canvas {
 
 /* ABOUT */
 .about{
-    min-height: 85vh;
+    /* min-height: 85vh; */
     background-color: black;
     display: grid;
     place-items: top;
@@ -225,8 +229,13 @@ img{
     margin: auto 1.75rem auto 1rem;
 }
 
-.indiv-info ul li{
+.indiv-info h5{
+    font-size: 3vw;
+}
+
+.indiv-info ul li, .indiv-info p{
     margin-left: 3rem;
+    font-size: 1.35vw;
 }
 
 .icons{
@@ -270,7 +279,9 @@ img{
     margin: 3vw 0 auto;
     padding: 3vw 0;
 }
-
+.contact-info h2{
+    font-size: 2vw;
+}
 .contact-info-text{
     margin: auto 0;
     color: white;
@@ -432,6 +443,14 @@ input[type=text]:focus, textarea:focus {
         font-size: 1rem;
     }
 
+    .indiv-info h5{
+        font-size: 2.75vw;
+    }
+    
+    .indiv-info ul li, .indiv-info p{
+        margin-left: 3rem;
+        font-size: 1.5vw;
+    }
     .icons{
         margin: auto 2rem;
     }
@@ -490,6 +509,15 @@ input[type=text]:focus, textarea:focus {
     .contact-form{
         margin: 7px auto;
         width: 87%;
+    }
+
+    .indiv-info h5{
+        font-size: 2.75vw;
+    }
+    
+    .indiv-info ul li{
+        margin-left: 2.5rem;
+        font-size: 1.5vw;
     }
 
     #error-message {
@@ -603,6 +631,11 @@ input[type=text]:focus, textarea:focus {
         flex: 1;
         padding: 3rem 1rem;
     }
+    
+    .indiv-info ul li{
+        margin-left: 2.5rem;
+        font-size: 1.75vw;
+    }
 
     .pic-text{
         font-size: 1rem;
@@ -619,9 +652,7 @@ input[type=text]:focus, textarea:focus {
 }
 
 @media(max-width: 768px) {
-    .home-text{
-        position: absolute;
-    }
+
     .navbar ul{
         position: absolute;
     }
@@ -711,6 +742,15 @@ input[type=text]:focus, textarea:focus {
         margin-right: 40px;
     }
 
+    .indiv-info h5{
+        font-size: 2vw;
+    }
+    
+    .indiv-info ul li{
+        margin-left: 2rem;
+        font-size: 1.85vw;
+    }
+
     /* CONTACT */
     .contact-info-text h2 {
         font-size: 1.25rem;
@@ -724,7 +764,12 @@ input[type=text]:focus, textarea:focus {
         font-size: 1.2rem;
         width: 90%;
     }
-
+    .contact-info-text h2 {
+        font-size: 1.2rem;
+    }
+    .contact-info-text h3{
+        font-size: 1.24rem;
+    }
     /* PROJECTS */
     .project-header, .members-header{
         font-size: 6rem;
