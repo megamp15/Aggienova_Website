@@ -126,15 +126,15 @@ function validation() {
     error_message.style.border = "3px solid white";
 
     if (message == "" || message == " ") {
-        Message = "Please Enter a Valid Message"
+        Message = "Please Enter a Valid Message!"
     }
 
     if (email.indexOf("@") == -1) {
-        Message = "Please Enter a Valid Email"
+        Message = "Please Enter a Valid Email!"
     }
 
     if (name == "" || name == " ") {
-        Message = "Please Enter a Valid Name"
+        Message = "Please Enter a Valid Name!"
     }
 
     if (Message != "") {
@@ -169,6 +169,12 @@ function onScroll(event) {
         }
     });
 }
+
+// Nav bar background change
+window.addEventListener("scroll", function () {
+    let nav = document.querySelector("nav");
+    nav.classList.toggle("nav-back", window.scrollY > 650);
+  });
 
 // Gallery select
 // Function that filters projects based on class names
