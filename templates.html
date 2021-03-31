@@ -21,17 +21,139 @@
             PLOTS
         </h1>
     </section>
-    
-    <!-- GRID of PLOTS -->
-    <section id="PLOTS">
-        <nav class="navbar">
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search Supernova" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </nav>
-    </section>
+   
+    <!--STYLE FOR GRID-->
+    <style>
+        *{ box-sizing: border-box;}
+        body{margin: 0; font-family: Arial, Helvetica, sans-serif;}
 
+        .column{float: left; width: 25%; padding: 50px;text-align: center;font-size: 25px; cursor: pointer; color:white;}
+
+        .containerTab{padding: 10px; color: white;}
+
+        .row:after{content: ""; display: table; clear: both;}
+
+        .closebtn{float: right; color: white; font-size: 35px; cursor: pointer;}
+    </style>
+
+    <!--ROW 1-->
+    <div class="row"> 
+        <div class="column" onclick="openTab('SN2005cs');" style="background: black; border-style: solid; border-color: blue;">
+            SN2005cs
+        </div>
+        <div class="column" onclick="openTab('SN2005ke');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2005ke_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
+            SN2005ke
+        </div>
+        <div class="column" onclick="openTab('SN2006bp');" style="background: black; border-style: solid; border-color: blue;">
+            SN2006bp 
+        </div>
+        <div class="column" onclick="openTab('SN2007af');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2007af_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
+            SN2007af 
+        </div>
+    </div>
+    <!--EXPANDABLE GRIDS FOR ROW 1-->
+    <div id="SN2005cs" class="containerTab" style="display:none; background: black; border-style: solid; border-color: blue;">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+        <h2><center>SN2005cs Graph</center></h2>
+        <p>Input Graph</p>
+    </div>
+
+    <div id="SN2005ke" class="containerTab" style="display:none; background: black; border-style: solid; border-color: red;">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+        <h2><center>SN2005ke Graph</center></h2>
+        <p>Input Graph</p>
+    </div>
+
+    <div id="SN2006bp" class="containerTab" style="display:none; background: black; border-style: solid; border-color: blue;">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+        <h2><center>SN2006bp Graph</center></h2>
+        <p>Input Graph</p>
+    </div>
+    <div id="SN2007af" class="containerTab" style="display:none; background: black; border-style: solid; border-color:red;">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+        <h2><center>SN2007af Graph</center></h2>
+        <p>Input Graph</p>
+    </div>
+
+    <!--ROW 2-->
+    <div class="row"> 
+        <div class="column" onclick="openTab('SN2007on');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2007on_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
+            SN2007on
+        </div>
+        <div class="column" onclick="openTab('SN2008aw');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2008aw_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: blue;">
+            SN2008aw
+        </div>
+        <div class="column" onclick="openTab('SN2011by');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2011by_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
+            SN2011by
+        </div>
+        <div class="column" onclick="openTab('SN2012aw');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2012aw_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: blue;">
+            SN2012aw
+        </div>
+    </div>
+
+    <!--EXPANDABLE GRIDS FOR ROW 2-->
+    <div id="SN2007on" class="containerTab" style="display:none; background: black; border-style: solid; border-color: red;">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+        <h2><center>SN2007on Graph</center></h2>
+        <p>Input Graph</p>
+    </div>
+    <div id="SN2008aw" class="containerTab" style="display:none; background: black; border-style: solid; border-color: blue;">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+        <h2><center>SN2008aw Graph</center></h2>
+        <p>Input Graph</p>
+    </div>
+    <div id="SN2011by" class="containerTab" style="display:none; background: black; border-style: solid; border-color:red;">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+        <h2><center>SN2011by Graph</center></h2>
+        <p>Input Graph</p>
+    </div>
+    <div id="SN2012aw" class="containerTab" style="display:none; background: black; border-style: solid; border-color: blue;">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+        <h2><center>SN2012aw Graph</center></h2>
+        <p>Input Graph</p>
+    </div>
+
+    <!--ROW 3-->
+    <div class="row"> 
+        <div class="column" onclick="openTab('SN2017cbv');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2017cbv_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
+            SN2017cbv
+        </div>
+        <div class="column" onclick="openTab('SN2017eaw');" style="background: black; border-style: solid; border-color: blue;">
+            SN2017eaw
+        </div>
+        <div class="column" onclick="openTab('SN2017ein');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2017ein_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
+            SN2017ein
+        </div>
+    </div>
+
+    <!--EXPANDABLE GRIDS FOR ROW 3-->
+    <div id="SN2017cbv" class="containerTab" style="display:none; background: black; border-style: solid; border-color: red;">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+        <h2><center>SN2017cbv Graph</center></h2>
+        <p>Input Graph</p>
+    </div>
+    <div id="SN2017eaw" class="containerTab" style="display:none; background: black; border-style: solid; border-color: blue;">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+        <h2><center>SN2017eaw Graph</center></h2>
+        <p>Input Graph</p>
+    </div>
+    <div id="SN2017ein" class="containerTab" style="display:none; background: black; border-style: solid; border-color:red;">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+        <h2><center>SN2017ein Graph</center></h2>
+        <p>Input Graph</p>
+    </div>
+
+    <!--SCRIPT TO EXPAND GRID WHEN CLICKED ON-->
+    <script>
+        function openTab(tabName){
+            var i, x;
+            x=document.getElementsByClassName("containerTab");
+            for (i=0; i < x.length; i++){
+                x[i].style.display= "none";
+            }
+            document.getElementById(tabName).style.display= "block"
+        }
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
