@@ -41,9 +41,10 @@ body{
 }
 .title{
   font-family: 'Exo', sans-serif;
-  font-size: 150px;
+  font-size: 5vw;
   font-weight: 1000;
   color: rgba(99, 21, 21, 0.9);
+  padding-bottom: 15px;
 }
 
 .matrix{
