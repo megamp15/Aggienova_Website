@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.0.min.js" integrity="sha384-HjagQp6T0/7bxYTAXbLotF1MLAGWmhkY5siA1Gc/pcEgvgRPtMsRn0gQtMwGKiw1" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
+    
     <!-- CSS -->
     <link rel="stylesheet" href="templates_style.css">
 </head>
@@ -56,6 +61,7 @@
         <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
         <h2><center>SN2005cs Graph</center></h2>
         <p>Input Graph</p>
+        
     </div>
 
     <div id="SN2005ke" class="containerTab" style="display:none; background: black; border-style: solid; border-color: red;">
@@ -142,6 +148,8 @@
         <h2><center>SN2017ein Graph</center></h2>
         <p>Input Graph</p>
     </div>
+    <!-- <div class="bk-root" id="67bdc4c9-9c27-4d85-96b5-6be84dd6d019" data-root-id="1611"></div>
+    <div class="bk-root" id="0891f1b9-6e37-4acb-bb4e-997f7421d8b2" data-root-id="2160"></div> -->
 
     <!--SCRIPT TO EXPAND GRID WHEN CLICKED ON-->
     <script>
@@ -156,7 +164,8 @@
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="plots.js"></script> -->
     <script src="script.js"></script>
-</body>
+</body> 
 
 </html>
