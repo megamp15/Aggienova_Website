@@ -88,8 +88,8 @@ input[type=search]:focus, textarea:focus {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
-iframe {
+/* iframe {
   height: 100%;
   width: 75%;
 position: absolute; 
-}
+} */

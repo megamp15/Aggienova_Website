@@ -1,8 +1,4 @@
-console.log($(window).height());
-console.log($(window).width());
-console.log("CHECK!")
 console.log(document.getElementsByTagName("iframe").length)
-
 
 iframe_load_counter = 0;
 function iframe_loaded(){
