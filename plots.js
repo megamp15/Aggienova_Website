@@ -1,3 +1,5 @@
+console.log($(window).height());
+console.log($(window).width());
 console.log("CHECK!")
 console.log(document.getElementsByTagName("iframe").length)
 
