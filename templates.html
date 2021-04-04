@@ -10,11 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.0.min.js" integrity="sha384-HjagQp6T0/7bxYTAXbLotF1MLAGWmhkY5siA1Gc/pcEgvgRPtMsRn0gQtMwGKiw1" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        Bokeh.set_log_level("info");
-    </script>
-    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"
+        integrity="sha512-U4J4PbEJ2TMjFqPUSiKq7LLTHuEkPZVo0jl2fomi9pT7UAExh4xVi8KmoR7EfmyigH95aA68zpW7y3XzuoSurQ=="
+        crossorigin="anonymous"></script> -->
     <!-- CSS -->
     <link rel="stylesheet" href="templates_style.css">
 </head>
@@ -26,154 +24,259 @@
             Supernovae Data Visuals
         </h1>
     </section>
-   
+
     <!--STYLE FOR GRID-->
     <style>
-        *{ box-sizing: border-box;}
-        body{margin: 0; font-family: Arial, Helvetica, sans-serif;}
+        * {
+            box-sizing: border-box;
+        }
 
-        .column{float: left; width: 25%; padding: 50px;text-align: center;font-size: 25px; cursor: pointer; color:white;}
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-        .containerTab{padding: 10px; color: white;}
+        .column {
+            float: left;
+            width: 25%;
+            padding: 50px;
+            text-align: center;
+            font-size: 25px;
+            cursor: pointer;
+            color: white;
+        }
 
-        .row:after{content: ""; display: table; clear: both;}
+        .containerTab {
+            padding: 10px;
+            color: white;
+        }
 
-        .closebtn{float: right; color: white; font-size: 35px; cursor: pointer;}
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .closebtn {
+            float: right;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+        }
     </style>
 
     <!--ROW 1-->
-    <div class="row"> 
-        <div class="column" onclick="openTab('SN2005cs');" style="background: black; border-style: solid; border-color: blue;">
+    <div class="row">
+        <div class="column" onclick="openTab('SN2005cs');"
+            style="background: black; border-style: solid; border-color: blue;">
             SN2005cs
         </div>
-        <div class="column" onclick="openTab('SN2005ke');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2005ke_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
+        <div class="column" onclick="openTab('SN2005ke');"
+            style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2005ke_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
             SN2005ke
         </div>
-        <div class="column" onclick="openTab('SN2006bp');" style="background: black; border-style: solid; border-color: blue;">
-            SN2006bp 
+        <div class="column" onclick="openTab('SN2006bp');"
+            style="background: black; border-style: solid; border-color: blue;">
+            SN2006bp
         </div>
-        <div class="column" onclick="openTab('SN2007af');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2007af_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
-            SN2007af 
+        <div class="column" onclick="openTab('SN2007af');"
+            style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2007af_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
+            SN2007af
         </div>
     </div>
     <!--EXPANDABLE GRIDS FOR ROW 1-->
-    <div id="SN2005cs" class="containerTab" style="display:none; background: black; border-style: solid; border-color: blue;">
+    <div id="SN2005cs" class="containerTab"
+        style="display:none; background: black; border-style: solid; border-color: blue;">
         <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-        <h2><center>SN2005cs Graph</center></h2>
-        <p>Input Graph</p>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2005cs_uvot_SNII_series_spec_summaryPlot.html" height="500px" width="100%"></iframe>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2005cs_uvot_SNII_series_light_summaryPlot.html" height="500px" width="100%"></iframe>
+        <h2>
+            <center>SN2005cs Graph</center>
+        </h2>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2005cs_uvot_SNII_series_spec_summaryPlot.html"
+            height="500px" width="90%" onload=iframe_loaded();></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2005cs_uvot_SNII_series_light_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
     </div>
 
-    <div id="SN2005ke" class="containerTab" style="display:none; background: black; border-style: solid; border-color: red;">
+    <div id="SN2005ke" class="containerTab"
+        style="display:none; background: black; border-style: solid; border-color: red;">
         <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-        <h2><center>SN2005ke Graph</center></h2>
+        <h2>
+            <center>SN2005ke Graph</center>
+        </h2>
         <p>Input Graph</p>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2005ke_SNIa_series_spec_summaryPlot.html" height="500px" width="100%"></iframe>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2005ke_SNIa_series_light_summaryPlot.html" height="500px" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2005ke_SNIa_series_spec_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2005ke_SNIa_series_light_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
     </div>
 
-    <div id="SN2006bp" class="containerTab" style="display:none; background: black; border-style: solid; border-color: blue;">
+    <div id="SN2006bp" class="containerTab"
+        style="display:none; background: black; border-style: solid; border-color: blue;">
         <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-        <h2><center>SN2006bp Graph</center></h2>
+        <h2>
+            <center>SN2006bp Graph</center>
+        </h2>
         <p>Input Graph</p>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2006bp_SNII_series_spec_summaryPlot.html" height="500px" width="100%"></iframe>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2006bp_SNII_series_light_summaryPlot.html" height="500px" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2006bp_SNII_series_spec_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2006bp_SNII_series_light_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
     </div>
-    <div id="SN2007af" class="containerTab" style="display:none; background: black; border-style: solid; border-color:red;">
+    <div id="SN2007af" class="containerTab"
+        style="display:none; background: black; border-style: solid; border-color:red;">
         <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-        <h2><center>SN2007af Graph</center></h2>
+        <h2>
+            <center>SN2007af Graph</center>
+        </h2>
         <p>Input Graph</p>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2007af_SNIa_series_spec_summaryPlot.html" height="500px" width="100%"></iframe>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2007af_SNIa_series_light_summaryPlot.html" height="500px" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2007af_SNIa_series_spec_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2007af_SNIa_series_light_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
     </div>
 
     <!--ROW 2-->
-    <div class="row"> 
-        <div class="column" onclick="openTab('SN2007on');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2007on_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
+    <div class="row">
+        <div class="column" onclick="openTab('SN2007on');"
+            style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2007on_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
             SN2007on
         </div>
-        <div class="column" onclick="openTab('SN2008aw');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2008aw_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: blue;">
+        <div class="column" onclick="openTab('SN2008aw');"
+            style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2008aw_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: blue;">
             SN2008aw
         </div>
-        <div class="column" onclick="openTab('SN2011by');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2011by_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
+        <div class="column" onclick="openTab('SN2011by');"
+            style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2011by_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
             SN2011by
         </div>
-        <div class="column" onclick="openTab('SN2012aw');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2012aw_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: blue;">
+        <div class="column" onclick="openTab('SN2012aw');"
+            style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2012aw_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: blue;">
             SN2012aw
         </div>
     </div>
 
     <!--EXPANDABLE GRIDS FOR ROW 2-->
-    <div id="SN2007on" class="containerTab" style="display:none; background: black; border-style: solid; border-color: red;">
+    <div id="SN2007on" class="containerTab"
+        style="display:none; background: black; border-style: solid; border-color: red;">
         <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-        <h2><center>SN2007on Graph</center></h2>
+        <h2>
+            <center>SN2007on Graph</center>
+        </h2>
         <p>Input Graph</p>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2007on_SNIa_series_spec_summaryPlot.html" height="500px" width="100%"></iframe>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2007on_SNIa_series_light_summaryPlot.html" height="500px" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2007on_SNIa_series_spec_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2007on_SNIa_series_light_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
     </div>
-    <div id="SN2008aw" class="containerTab" style="display:none; background: black; border-style: solid; border-color: blue;">
+    <div id="SN2008aw" class="containerTab"
+        style="display:none; background: black; border-style: solid; border-color: blue;">
         <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-        <h2><center>SN2008aw Graph</center></h2>
+        <h2>
+            <center>SN2008aw Graph</center>
+        </h2>
         <p>Input Graph</p>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2008aw_SNII_series_spec_summaryPlot.html" height="500px" width="100%"></iframe>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2008aw_SNII_series_light_summaryPlot.html" height="500px" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2008aw_SNII_series_spec_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2008aw_SNII_series_light_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
     </div>
-    <div id="SN2011by" class="containerTab" style="display:none; background: black; border-style: solid; border-color:red;">
+    <div id="SN2011by" class="containerTab"
+        style="display:none; background: black; border-style: solid; border-color:red;">
         <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-        <h2><center>SN2011by Graph</center></h2>
+        <h2>
+            <center>SN2011by Graph</center>
+        </h2>
         <p>Input Graph</p>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2011by_SNIa_series_spec_summaryPlot.html" height="500px" width="100%"></iframe>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2011by_SNIa_series_light_summaryPlot.html" height="500px" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2011by_SNIa_series_spec_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2011by_SNIa_series_light_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
     </div>
-    <div id="SN2012aw" class="containerTab" style="display:none; background: black; border-style: solid; border-color: blue;">
+    <div id="SN2012aw" class="containerTab"
+        style="display:none; background: black; border-style: solid; border-color: blue;">
         <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-        <h2><center>SN2012aw Graph</center></h2>
+        <h2>
+            <center>SN2012aw Graph</center>
+        </h2>
         <p>Input Graph</p>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2012aw_SNII_series_spec_summaryPlot.html" height="500px" width="100%"></iframe>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2012aw_SNII_series_light_summaryPlot.html" height="500px" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2012aw_SNII_series_spec_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2012aw_SNII_series_light_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
     </div>
 
     <!--ROW 3-->
-    <div class="row"> 
-        <div class="column" onclick="openTab('SN2017cbv');" style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2017cbv_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
+    <div class="row">
+        <div class="column" onclick="openTab('SN2017cbv');"
+            style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2017cbv_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
             SN2017cbv
         </div>
-        <div class="column" onclick="openTab('SN2017eaw');" style="background: black; border-style: solid; border-color: blue;">
+        <div class="column" onclick="openTab('SN2017eaw');"
+            style="background: black; border-style: solid; border-color: blue;">
             SN2017eaw
         </div>
     </div>
 
     <!--EXPANDABLE GRIDS FOR ROW 3-->
-    <div id="SN2017cbv" class="containerTab" style="display:none; background: black; border-style: solid; border-color: red;">
+    <div id="SN2017cbv" class="containerTab"
+        style="display:none; background: black; border-style: solid; border-color: red;">
         <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-        <h2><center>SN2017cbv Graph</center></h2>
+        <h2>
+            <center>SN2017cbv Graph</center>
+        </h2>
         <p>Input Graph</p>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2017cbv_SNIa_series_spec_summaryPlot.html" height="500px" width="100%"></iframe>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2017cbv_SNIa_series_light_summaryPlot.html" height="500px" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2017cbv_SNIa_series_spec_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2017cbv_SNIa_series_light_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
     </div>
-    <div id="SN2017eaw" class="containerTab" style="display:none; background: black; border-style: solid; border-color: blue;">
+    <div id="SN2017eaw" class="containerTab"
+        style="display:none; background: black; border-style: solid; border-color: blue;">
         <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-        <h2><center>SN2017eaw Graph</center></h2>
+        <h2>
+            <center>SN2017eaw Graph</center>
+        </h2>
         <p>Input Graph</p>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2017eaw_SNII_series_spec_summaryPlot.html" height="500px" width="100%"></iframe>
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2017eaw_SNII_series_light_summaryPlot.html" height="500px" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2017eaw_SNII_series_spec_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2017eaw_SNII_series_light_summaryPlot.html"
+            height="500px" width="100%" onload=iframe_loaded();></iframe>
     </div>
 
     <!--SCRIPT TO EXPAND GRID WHEN CLICKED ON-->
     <script>
-        function openTab(tabName){
+        function openTab(tabName) {
             var i, x;
-            x=document.getElementsByClassName("containerTab");
-            for (i=0; i < x.length; i++){
-                x[i].style.display= "none";
+            x = document.getElementsByClassName("containerTab");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
             }
-            document.getElementById(tabName).style.display= "block"
+            document.getElementById(tabName).style.display = "block"
         }
     </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="plots.js"></script>
     <script src="script.js"></script>
-</body> 
+</body>
 
 </html>
