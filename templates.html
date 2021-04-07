@@ -36,20 +36,18 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        div {
-            max-width: 100%;
-            min-width: 250px;
-
-        }
-
         .column {
             float: left;
-            width: 25%;
+            width: 24.5%;
             padding: 50px;
             text-align: center;
             font-size: 25px;
             cursor: pointer;
             color: white;
+            max-width: 100%;
+            min-width: 250px;
+            margin-left: 5px;
+            margin-bottom: 5px;
         }
 
         .containerTab {
@@ -70,9 +68,10 @@
             cursor: pointer;
         }
     </style>
+    
 
         <!--ROW 1-->
-
+    <div class="row">
         <div class="column" onclick="openTab('SN2005cs');"
             style="background: black; border-style: solid; border-color: blue;">
             SN2005cs
@@ -89,6 +88,7 @@
             style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2007af_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
             SN2007af
         </div>
+    </div>
 
         <!--EXPANDABLE GRIDS FOR ROW 1-->
         <div id="SN2005cs" class="containerTab"
@@ -97,7 +97,7 @@
             <h2>
                 <center>SN2005cs Graph</center>
             </h2> 
-            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+            <iframe id="igraph" scrolling="no" style="border:none;"  seamless="seamless"
                 src="https://megamp15.github.io/Aggienova_Website/plots/spectra/SN2005cs_uvot_SNII_series_spec_summaryPlot.html"
                 height="500px" width="100%" onload=iframe_loaded();></iframe>
             <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
@@ -150,7 +150,7 @@
         </div>
 
         <!--ROW 2-->
-
+    <div class="row">
         <div class="column" onclick="openTab('SN2007on');"
             style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2007on_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
             SN2007on
@@ -167,8 +167,7 @@
             style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2012aw_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: blue;">
             SN2012aw
         </div>
-
-
+    </div>
         <!--EXPANDABLE GRIDS FOR ROW 2-->
         <div id="SN2007on" class="containerTab"
             style="display:none; background: black; border-style: solid; border-color: red;">
@@ -228,7 +227,7 @@
         </div>
 
         <!--ROW 3-->
-
+    <div class="row">
         <div class="column" onclick="openTab('SN2017cbv');"
             style="background-image: url('https://raw.githubusercontent.com/pbrown801/SOUSA/master/images/SN2017cbv_uvot.png');  background-size: 100% 100%; border-style: solid; border-color: red;">
             SN2017cbv
@@ -237,9 +236,10 @@
             style="background: black; border-style: solid; border-color: blue;">
             SN2017eaw
         </div>
-
+    </div>
 
         <!--EXPANDABLE GRIDS FOR ROW 3-->
+    <div class="row">
         <div id="SN2017cbv" class="containerTab"
             style="display:none; background: black; border-style: solid; border-color: red;">
             <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
@@ -268,7 +268,7 @@
                 src="https://megamp15.github.io/Aggienova_Website/plots/light/SN2017eaw_SNII_series_light_summaryPlot.html"
                 height="500px" width="100%" onload=iframe_loaded();></iframe>
         </div>
-
+    </div>
     <!--SCRIPT TO EXPAND GRID WHEN CLICKED ON-->
     <script>
         function openTab(tabName) {
