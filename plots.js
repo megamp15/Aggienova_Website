@@ -36,13 +36,13 @@ var calcOrder = function(perRow) {
 
 // determine number per row based on window width
 var breakpoints = function(width) {
-    if (width >= 992) {
+    if (width >= 1400) {
         //md
         calcOrder(6)
-    } else if (width >= 776) {
+    } else if (width >= 1100) {
         //md
         calcOrder(4)
-    } else if (width >= 567) {
+    } else if (width >= 750) {
         //sm
         calcOrder(3)
     } else {
