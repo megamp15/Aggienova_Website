@@ -91,26 +91,25 @@ input[type=search]:focus, textarea:focus {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
+/* Containers */
 .containerTab{
   text-align: center;
 }
-/* iframe {
-  height: 100%;
-  width: 75%;
-position: absolute; 
-} */
+
 .undertext{
   font-size: 2.5vw;
   color: #e7dddd;
 }
 
-.type_legend{
-
+/* LEGEND */
+.legend-container{
+  display: table;
+  margin: auto;  
+  padding-bottom: 20px;
 }
 
 .legend{
   list-style: none;
-
 }
 .legend li {
   float: left;
@@ -139,18 +138,82 @@ position: absolute;
   border-style:dashed;
 
   background-size: 100% 100%;
-  padding: 50px;
+  padding: 50px 25px;
   text-align: center;
-  font-size: 1.65vw;
+  font-size: 1.5vw;
   cursor: pointer;
   color:#e7dddd;
-
-
-
+  font-weight: 600;
 }
 
 .py-2 {
   background: black; 
   border-style: dashed;
   color: #e7dddd;
+}
+
+
+/* MEDIA QUERIES */
+@media(max-width: 1335px) {
+  .shadow-sm {
+    font-size: 1.5vw;
+  }
+}
+
+@media(max-width: 1225px) {
+  .shadow-sm {
+    font-size: 1.3vw;
+  }
+}
+
+@media(max-width: 1100px) {
+  .shadow-sm {
+    font-size: 1.2vw;
+  }
+}
+
+@media(max-width: 990px) {
+  .shadow-sm {
+    font-size: 1.7vw;
+  }
+}
+
+@media(max-width: 820px) {
+  .shadow-sm {
+    font-size: 1.25vw;
+  }
+}
+@media(max-width: 790px) {
+  .shadow-sm {
+    font-size: 1.9vw;
+  }
+}
+@media(max-width: 768px) {
+  .shadow-sm {
+    font-size: 2vw;
+  }
+}
+
+@media(max-width: 700px) {
+  .shadow-sm {
+    font-size: 2.5vw;
+  }
+}
+
+@media(max-width: 576px) {
+  .shadow-sm {
+    font-size: 3.75vw;
+  }
+}
+
+@media(max-width: 420px) {
+  .shadow-sm {
+    font-size: 3.15vw;
+  }
+}
+
+@media(max-width: 400px) {
+  .shadow-sm {
+    font-size: 3.5vw;
+  }
 }
